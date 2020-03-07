@@ -470,7 +470,7 @@
   </footer>
 
 
-  <section class="appointment modal modal--hide">
+  <section class="appointment modal">
     <div class="container">
       <h2 class="section-title section-title--white">Make An Appointment</h2>
 
@@ -482,11 +482,11 @@
 
       <form class="appointment__form" action="#" method="get">
         <div class="appointment__column">
-          <input class="appointment__textfield" type="text" name="name" id="nameField" placeholder="Name" required>
+          <input class="appointment__textfield" type="text" name="name" id="nameField" placeholder="Name" required autocomplete="off">
           <input class="appointment__textfield" type="email" name="email" placeholder="Email" pattern="[^ @]*@[^ @]*"
-            id="email" required>
+            id="email" required autocomplete="off">
           <input class="appointment__textfield" type="tel" name="phone" id="phone" placeholder="Phone"
-            pattern="+[0-9]-[0-9]{3}-[0-9]{7}" required>
+            pattern="+[0-9]-[0-9]{3}-[0-9]{7}" required autocomplete="off">
         </div>
 
         <div class="appointment__column">
@@ -509,7 +509,7 @@
           </div>
 
           <div class="appointment__select-wrapper appointment__select-wrapper--date">
-            <input class="appointment__datefield" type="date" name="date" id="date" required>
+            <input class="appointment__datefield" type="date" name="date" id="date" required autocomplete="off">
           </div>
         </div>
         <textarea class="appointment__message" name="message" id="message" cols="30" rows="10"
