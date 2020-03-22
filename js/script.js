@@ -1,6 +1,24 @@
+'use strict';
+
+var Scroll = {
+  SHADE: 400,
+  TOP: 100
+};
+
 var modalOpenButton = document.querySelector('.slider__btn--modalShow');
 var modal = document.querySelector('.modal');
 var modalCloseButton = modal.querySelector('.modal__close-btn');
+
+var pageHeader = document.querySelector('.page-header');
+var navigation = pageHeader.querySelector('.page-header__nav');
+
+var onWindowScroll = function () {
+  var shade = window.scrollY < Scroll.SHADE ? window.scrollY + Scroll.SHADE / 4 : Scroll.SHADE;
+  var top = window.scrollY < Scroll.TOP ? window.scrollY : Scroll.TOP;
+
+  navigation.style.backgroundColor =  'rgba(0, 0, 0, ' + shade / Scroll.SHADE +')';
+  pageHeader.style.top = -(top / Scroll.TOP) * Scroll.TOP + 'px';
+};
 
 var onModalOpenButtonClick = function () {
   if (modal.classList.contains('modal--hide')) {
@@ -26,4 +44,6 @@ var onDocumentKeydown = function (evt) {
   }
 };
 
+
+window.addEventListener('scroll', onWindowScroll);
 modalOpenButton.addEventListener('click', onModalOpenButtonClick);
