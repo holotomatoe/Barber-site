@@ -131,6 +131,8 @@ a {
   line-height: 1.4;
   color: #454545;
   letter-spacing: 0.4px;
+
+  transition: all 0.3s;
 }
 
 .page-header__info-item {
@@ -186,6 +188,8 @@ a {
   background-image: url("../img/search.png");
   background-repeat: no-repeat;
   background-size: 80%;
+
+  transition: all 0.3s;
 }
 
 .page-header__info-link--search:hover::before {
@@ -307,7 +311,7 @@ a {
   top: 100px;
   left: 312px;
 
-  width: 430px;
+  width: 415px;
 
   font-weight: bold;
   font-size: 52px;
@@ -874,12 +878,24 @@ a {
   height: 75px;
 
   background-color: #ffffff;
-  background-image: url("../img/hair-wash.png");
+  background-image: url("../img/hair-cut.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 50%;
-  border: 1px solid #995437;
+  border: 2px solid #995437;
   border-radius: 50%;
+}
+
+.services__item:nth-of-type(2)::after {
+  background-image: url("../img/hair-styling.png");
+}
+
+.services__item:nth-of-type(3)::after {
+  background-image: url("../img/hair-wash.png");
+}
+
+.services__item:nth-of-type(4)::after {
+  background-image: url("../img/shave.png");
 }
 
 .services__item:nth-of-type(odd)::after {
@@ -1024,9 +1040,16 @@ a {
   text-transform: capitalize;
   letter-spacing: 0.025em;
 
-  background-color: #995437;
-  border: 1px solid #6e331a;
+  background-color: transparent;
+  border: 2px solid #6e331a;
   cursor: pointer;
+
+  transition: all 0.3s;
+}
+
+.appointment__btn:hover {
+  background-color: #995437;
+  border-color: #995437;
 }
 
 .appointment__btn-wrapper {
@@ -1039,10 +1062,15 @@ a {
   font-size: 15px;
   line-height: 1.5;
   color: #545454;
-  text-decoration: underline;
 
   background-color: transparent;
   border: none;
+}
+
+.appointment__btn--reset:hover {
+  color: #985336;
+
+  background-color: transparent;
 }
 
 .barbers__list {
@@ -1183,6 +1211,8 @@ a {
 
   vertical-align: middle;
   text-align: center;
+
+  transition: all 0.3s;
 }
 
 .pricing__table tfoot a {
@@ -1194,6 +1224,16 @@ a {
   text-transform: uppercase;
   letter-spacing: 0.025em;
 }
+
+
+.pricing__item:nth-of-type(1) .pricing__table tfoot td:hover {
+  background-color: #995437;
+}
+
+.pricing__item:nth-of-type(2) .pricing__table tfoot td:hover {
+  background-color: #303030;
+}
+
 
 .page-footer {
   background-color: #000000;
@@ -1286,6 +1326,14 @@ a {
   background-repeat: no-repeat;
   background-position: center;
   border: 1px solid #995437;
+  cursor: pointer;
+
+  transition: all 0.3s;
+}
+
+.page-footer__btn:hover {
+  background-color: #303030;
+  border-color: #303030;
 }
 
 .page-footer__table {
@@ -1376,6 +1424,13 @@ a {
   background-repeat: no-repeat;
   background-position: center;
   border: 1px solid #ffffff;
+
+  transition: all 0.3s;
+}
+
+.page-footer__social-link:hover {
+  background-color: #985336;
+  border-color: #985336;
 }
 
 .page-footer__social-link--google {
@@ -1407,14 +1462,13 @@ a {
   box-sizing: border-box;
   padding: 10px 210px;
 
+  background-image: linear-gradient(rgba(0, 0, 0, 0.80), rgba(0, 0, 0, 0.80)), url("../img/bg-4.jpg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: cover;
   box-shadow: 0 0 50px -10px black;
 
   animation: modalShow 0.4s linear;
-
-  background-image: linear-gradient(rgba(0, 0, 0, 0.80), rgba(0, 0, 0, 0.80)), url("../img/bg-4.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 0 0;
 }
 
 .modal__container {
@@ -1432,7 +1486,14 @@ a {
   background-color: transparent;
   border: 2px solid #995437;
   border-radius: 50%;
-  transform: rotate(45deg);
+  transform: rotate(45deg) scale(0.8);
+  cursor: pointer;
+
+  transition: all 0.3s;
+}
+
+.modal__close-btn:hover {
+  background-color: #995437;
 }
 
 .modal__close-btn::before {
@@ -1444,7 +1505,9 @@ a {
   width: 2px;
   height: 20px;
 
-  background-color: #995437;
+  background-color: #ffffff;
+
+  transition: all 0.3s;
 }
 
 .modal__close-btn::after {
@@ -1456,7 +1519,17 @@ a {
   width: 20px;
   height: 2px;
 
-  background-color: #995437;
+  background-color: #ffffff;
+
+  transition: all 0.3s;
+}
+
+.modal__close-btn:hover::after {
+  background-color: white;
+}
+
+.modal__close-btn:hover::before {
+  background-color: white;
 }
 
 
@@ -1490,4 +1563,64 @@ input:-webkit-autofill {
   100% {
     left: calc(50% - 640px);
   }
+}
+
+
+.move-up {
+  position: fixed;
+  right: 6px;
+  bottom: 10px;
+
+  width: 50px;
+  height: 50px;
+
+  background-color: white;
+  border: 2px solid #985336;
+  border-radius: 50%;
+
+  transition: all 0.3s;
+}
+
+.move-up::before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: 24px;
+
+  width: 2px;
+  height: 20px;
+
+  background-color: #985336;
+  transition: all 0.3s;
+}
+
+.move-up::after {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: 19px;
+
+
+  width: 10px;
+  height: 10px;
+
+  background-color: transparent;
+  border: 2px solid #985336;
+  border-bottom: none;
+  border-left: none;
+
+  transform: rotate(-45deg);
+  transition: all 0.3s;
+}
+
+.move-up:hover {
+  background-color: #985336;
+}
+
+.move-up:hover::after {
+  border-color: #ffffff;
+}
+
+.move-up:hover::before {
+  background-color: #ffffff;
 }

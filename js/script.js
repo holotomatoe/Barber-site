@@ -9,6 +9,8 @@ var modalOpenButton = document.querySelector('.slider__btn--modalShow');
 var modal = document.querySelector('.modal');
 var modalCloseButton = modal.querySelector('.modal__close-btn');
 
+var pricingBtn = document.querySelectorAll('.pricing__button');
+
 var pageHeader = document.querySelector('.page-header');
 var navigation = pageHeader.querySelector('.page-header__nav');
 
@@ -18,6 +20,15 @@ var onWindowScroll = function () {
 
   navigation.style.backgroundColor =  'rgba(0, 0, 0, ' + shade / Scroll.SHADE +')';
   pageHeader.style.top = -(top / Scroll.TOP) * Scroll.TOP + 'px';
+};
+
+var onPricingBtnClick = function (evt) {
+  evt.preventDefault();
+  if (modal.classList.contains('modal--hide')) {
+    modal.classList.remove('modal--hide');
+    modalCloseButton.addEventListener('click', onModalCloseButtonClick);
+    document.addEventListener('keydown', onDocumentKeydown);
+  }
 };
 
 var onModalOpenButtonClick = function () {
@@ -47,3 +58,6 @@ var onDocumentKeydown = function (evt) {
 
 window.addEventListener('scroll', onWindowScroll);
 modalOpenButton.addEventListener('click', onModalOpenButtonClick);
+pricingBtn.forEach(function (btn) {
+  btn.addEventListener('click', onPricingBtnClick);
+})
