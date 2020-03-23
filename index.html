@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="description" content="Barbershop"> 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
@@ -32,7 +33,7 @@
             </p>
           </li>
           <li class="page-header__info-item">
-            <a class="page-header__info-link page-header__info-link--search" href="#"></a>
+            <a class="page-header__info-link page-header__info-link--search" href="#" aria-label="open search field"></a>
           </li>
         </ul>
 
@@ -78,10 +79,10 @@
 
       <div class="container">
         <input class="slider__input visually-hidden" type="radio" name="slider-control" id="sliderB">
-        <label class="slider__btn-round slider__btn--back" for="sliderB"></label>
+        <label class="slider__btn-round slider__btn--back" for="sliderB" aria-label="Back"></label>
 
         <input class="slider__input visually-hidden" type="radio" name="slider-control" id="sliderF">
-        <label class="slider__btn-round slider__btn--front" for="sliderF"></label>
+        <label class="slider__btn-round slider__btn--front" for="sliderF" aria-label="Forward"></label>
       </div>
 
 
@@ -246,10 +247,10 @@
           accusantium doloremque laudantium, totam rem aperiam</p>
         <div class="reviews__wrapper">
           <input class="slider__input visually-hidden" type="radio" name="slider-control" id="reviewsB">
-          <label class="reviews__btn reviews__btn--back slider__btn-round slider__btn--back" for="reviewsB"></label>
+          <label class="reviews__btn reviews__btn--back slider__btn-round slider__btn--back" for="reviewsB" aria-label="Back"></label>
 
           <input class="slider__input visually-hidden" type="radio" name="slider-control" id="reviewsF">
-          <label class="reviews__btn reviews__btn--front slider__btn-round slider__btn--front" for="reviewsF"></label>
+          <label class="reviews__btn reviews__btn--front slider__btn-round slider__btn--front" for="reviewsF" aria-label="Forward"></label>
 
           <ul class="reviews__list">
             <li class="reviews__item">
@@ -406,6 +407,7 @@
           <form class="page-footer__form" action="#" method="get">
             <input class="page-footer__field" type="email" name="subscribeEmail" id="subscribeEmail"
               pattern="[^ @]*@[^ @]*" placeholder="Your E-mail">
+              <label for="subscribeEmail" class="visually-hidden">Subscribe</label>
             <button class="page-footer__btn" type="button" aria-label="Subscribe"></button>
           </form>
         </li>
